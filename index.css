@@ -6,7 +6,7 @@
     }
 
     .container {
-      max-width: 500px;
+      max-width: 550px;
       margin: 60px auto;
       padding: 30px;
       background-color: #ffffff;
@@ -27,7 +27,7 @@
       margin-bottom: 20px;
     }
 
-    input, button {
+    input, button, select {
       padding: 10px;
       font-size: 16px;
       border-radius: 8px;
@@ -63,17 +63,46 @@
 
     .task-info {
       flex: 1;
+      margin-right: 10px;
+    }
+
+    .priority-low {
+      color: green;
+    }
+    .priority-medium {
+      color: orange;
+    }
+    .priority-high {
+      color: red;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
     }
 
     .deleteBtn {
       background-color: red;
       color: white;
       border: none;
-      padding: 6px 12px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .editBtn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 10px;
       border-radius: 6px;
       cursor: pointer;
     }
 
     .deleteBtn:hover {
       background-color: darkred;
+    }
+
+    .editBtn:hover {
+      background-color: #0056b3;
     }

@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title> To-Do-List #Rajesh</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h2>My To-Do List</h2>
+  <h2>📋 Smart To-Do List</h2>
   <div class="input-group">
     <input type="text" id="taskInput" placeholder="Enter task" />
     <input type="date" id="taskDate" />
@@ -19,12 +19,19 @@
       <option value="Medium">Medium Priority</option>
       <option value="High">High Priority</option>
     </select>
+    <select id="taskRepeat">
+      <option value="None">No Repeat</option>
+      <option value="Daily">Repeat Daily</option>
+      <option value="Weekly">Repeat Weekly</option>
+    </select>
     <button id="addBtn">Add Task</button>
   </div>
   <ul id="taskList"></ul>
 </div>
 
-<script src="index.js"></script>
+<audio id="alarmSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
+<script src="script.js"></script>
 
 </body>
 </html>

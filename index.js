@@ -1,4 +1,6 @@
- const taskInput = document.getElementById("taskInput");
+Notification.requestPermission();        // Ask for permission at load
+
+  const taskInput = document.getElementById("taskInput");
   const taskDate = document.getElementById("taskDate");
   const taskTime = document.getElementById("taskTime");
   const taskPriority = document.getElementById("taskPriority");
@@ -56,7 +58,7 @@
       return;
     }
 
-    tasks.push({ text, date, time, priority });
+    tasks.push({ text, date, time, priority, reminded: false });
     saveTasks();
     renderTasks();
 
@@ -84,12 +86,39 @@
         text: newText,
         date: newDate,
         time: newTime,
-        priority: newPriority
+        priority: newPriority,
+        reminded: false
       };
       saveTasks();
       renderTasks();
     }
   }
 
+  function checkReminders() {
+    const now = new Date();
+    const nowDate = now.toISOString().split("T")[0];
+    const nowTime = now.toTimeString().slice(0, 5); // HH:MM
+
+    tasks.forEach((task, index) => {
+      if (!task.reminded && task.date === nowDate && task.time === nowTime) {
+        // Popup Alert
+        alert(`⏰ Reminder: ${task.text} is due now!`);
+        // Browser Notification
+        if (Notification.permission === "granted") {
+          new Notification("⏰ Task Reminder", {
+            body: `${task.text} - ${task.priority} Priority`,
+            icon: "https://cdn-icons-png.flaticon.com/512/726/726476.png"
+          });
+        }
+        task.reminded = true;
+        saveTasks();
+      }
+    });
+  }
+
   addBtn.addEventListener("click", addTask);
   renderTasks();
+
+  //  Check every 30 seconds
+  setInterval(checkReminders, 30000);
+

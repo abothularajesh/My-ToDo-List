@@ -1,55 +1,30 @@
- body {
+body {
       font-family: Arial, sans-serif;
       background-color: #f2f4f8;
-      margin: 0;
-      padding: 0;
     }
-
     .container {
-      max-width: 550px;
+      max-width: 600px;
       margin: 60px auto;
       padding: 30px;
       background-color: #ffffff;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border-radius: 12px;
     }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
+    h2 { text-align: center; color: #333; }
     .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;
     }
-
     input, button, select {
       padding: 10px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ccc;
     }
-
     #addBtn {
-      background-color: darkgreen;
-      color: white;
-      border: none;
-      cursor: pointer;
+      background-color: darkgreen; color: white; border: none; cursor: pointer;
     }
-
-    #addBtn:hover {
-      background-color: #006400;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
+    #addBtn:hover { background-color: #006400; }
+    ul { list-style: none; padding: 0; }
     li {
       background-color: #f9f9f9;
       padding: 12px;
@@ -58,51 +33,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-
-    .task-info {
-      flex: 1;
-      margin-right: 10px;
+    .task-info { flex: 1; margin-right: 10px; }
+    .priority-low { color: green; }
+    .priority-medium { color: orange; }
+    .priority-high { color: red; }
+    .btn-group { display: flex; gap: 8px; }
+    .deleteBtn, .editBtn {
+      color: white; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer;
     }
-
-    .priority-low {
-      color: green;
-    }
-    .priority-medium {
-      color: orange;
-    }
-    .priority-high {
-      color: red;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 8px;
-    }
-
-    .deleteBtn {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .editBtn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .deleteBtn:hover {
-      background-color: darkred;
-    }
-
-    .editBtn:hover {
-      background-color: #0056b3;
-    }
+    .deleteBtn { background-color: red; }
+    .deleteBtn:hover { background-color: darkred; }
+    .editBtn { background-color: #007bff; }
+    .editBtn:hover { background-color: #0056b3; }
+    .done { text-decoration: line-through; color: #888; }

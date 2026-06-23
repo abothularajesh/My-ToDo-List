@@ -1,4 +1,4 @@
-Notification.requestPermission();        // Ask for permission at load
+Notification.requestPermission(); // Ask for permission at load
 
   const taskInput = document.getElementById("taskInput");
   const taskDate = document.getElementById("taskDate");
@@ -119,6 +119,6 @@ Notification.requestPermission();        // Ask for permission at load
   addBtn.addEventListener("click", addTask);
   renderTasks();
 
-  //  Check every 30 seconds
+  // 🔁 Check every 30 seconds
   setInterval(checkReminders, 30000);
 
